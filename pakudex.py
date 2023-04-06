@@ -59,3 +59,4 @@ class Pakudex:
 # print(pakudex1.evolve_species("KuraiKuisverysigoyi.probablythemostoppersonontheworldthatcansolotheepicofalexander"))
 # print(pakudex1.evolve_species("TinySnowWolf2077"))
 # print(pakudex1.evolve_species("LalafellofDarkness"))
+#update?

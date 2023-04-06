@@ -18,3 +18,4 @@ class Pakuri:
         self.speed = self.speed*3
     def __str__(self):
         return f'the attack of {self.species} is {self.attack}, defense is {self.defense},and speed is {self.speed}'
+    #update?
