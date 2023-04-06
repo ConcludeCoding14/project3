@@ -35,18 +35,27 @@ class Pakudex:
     def evolve_species(self,species):
         if species not in self.species_array:
             return False
-        pass
+        else:
+            for i in self.pakudex:
+                if i.species == species:
+                    i.evolve()
+                    break
+            return i
 
 # pakudex1 = Pakudex()
-# print(pakudex1.add_pakuri("bikabu"))
-# print(pakudex1.add_pakuri("Lalafelloflight"))
-# print(pakudex1.add_pakuri("KuraiKuisverysigoyi.probablythemostoppersonontheworldthatcansolotheepicofalexander"))
-# print(pakudex1.add_pakuri("TinySnowWolf2077"))
-# print(pakudex1.add_pakuri("LalafellofDarkness"))
+# pakudex1.add_pakuri("bikabu")
+# pakudex1.add_pakuri("Lalafelloflight")
+# pakudex1.add_pakuri("KuraiKuisverysigoyi.probablythemostoppersonontheworldthatcansolotheepicofalexander")
+# pakudex1.add_pakuri("TinySnowWolf2077")
+# pakudex1.add_pakuri("LalafellofDarkness")
 # print(pakudex1.species_array)
-# print(len(pakudex1.species_array))
 # print(pakudex1.get_stats("bikabu"))
+# print(pakudex1.evolve_species("bikabu"))
 # print(pakudex1.get_stats("Lalafelloflight"))
 # print(pakudex1.get_stats("KuraiKuisverysigoyi.probablythemostoppersonontheworldthatcansolotheepicofalexander"))
 # print(pakudex1.get_stats("TinySnowWolf2077"))
 # print(pakudex1.get_stats("LalafellofDarkness"))
+# print(pakudex1.evolve_species("Lalafelloflight"))
+# print(pakudex1.evolve_species("KuraiKuisverysigoyi.probablythemostoppersonontheworldthatcansolotheepicofalexander"))
+# print(pakudex1.evolve_species("TinySnowWolf2077"))
+# print(pakudex1.evolve_species("LalafellofDarkness"))

@@ -11,15 +11,12 @@ def print_menu():
 if __name__ == "__main__":
     print("Welcome to Pakudex: Tracker Extraordinaire!")
     print("Enter max capacity of the Pakudex:")
-
     while True:
-        capacity = input()
-        if capacity.isdigit():
-            capacity = int(capacity)
+        try:
+            capacity = int(input("Enter the capacity: "))
             break
-        else:
-            print("Please enter a valid size.")
-            continue
+        except ValueError:
+            print("Please enter a valid integer value.")
     pakudex = Pakudex(capacity)
     print("The Pakudex can hold",pakudex.capacity,"species of Pakuri")
     while True:
@@ -34,16 +31,23 @@ if __name__ == "__main__":
                     print("No Pakuri in Pakudex yet!")
             elif option == 2:
                 species = input("Enter the name of the species to display:")
-                stats = pakudex.get_stats(species)
-                print(f'Speices: {species}')
-                print(f'Attack: {stats[0]}')
-                print(f'Defense: {stats[1]}')
-                print(f'Speed: {stats[2]}')
+                if species in pakudex.species_array:
+                    stats = pakudex.get_stats(species)
+                    print(f'Speices: {species}')
+                    print(f'Attack: {stats[0]}')
+                    print(f'Defense: {stats[1]}')
+                    print(f'Speed: {stats[2]}')
+                else:
+                    print("You don't have",species)
             elif option == 3:
                 species = input("Enter the name of the species to add:")
                 pakudex.add_pakuri(species)
             elif option == 4:
-                input("Enter the name of the species to evolve:")
+                species = input("Enter the name of the species to evolve:")
+                if species in pakudex.species_array:
+                    species = pakudex.evolve_species(species)
+                else:
+                    print("You don't have",species)
             elif option == 5:
                 pass
             elif option == 6:
